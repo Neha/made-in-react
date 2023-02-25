@@ -8,7 +8,7 @@ type InputProps = {
     name: string,
     label: string,
     type: string,
-    changeHandler: () => void
+    changeHandler?: () => void // why optional?
 }
 
 const Input =  React.forwardRef((props:InputProps, ref:any) => {

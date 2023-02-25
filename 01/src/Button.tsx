@@ -2,14 +2,14 @@ import React from 'react';
 
 type ButtonProps = {
     buttonLabel: string,
-    clickHandler: () => void;
+    clickHandler(e:React.SyntheticEvent):void;
 }
 
-const Button = (props:ButtonProps) => {
+const Button = ({ buttonLabel, clickHandler }:ButtonProps) => {
     return <button 
-             onClick={props.clickHandler}
+             onClick={clickHandler}
              data-testid="my-button">
-            { props.buttonLabel}
+            { buttonLabel}
             </button>
 }
 

@@ -1,20 +1,23 @@
 import React from 'react';
 
-const ArticleDisplay = ( data ) => {
+type articleDisplayProps = {
+  data: object,
+  children?: JSX.Element|JSX.Element[];
+}
+
+const ArticleDisplay = ( { data } : articleDisplayProps ) => {
     const createList = (data) => {
-      let itemsList = data.data;
+      let itemsList = data;
        return Object.entries(itemsList).map(([key, value]) => (
             <li key={key}>
               {key} : {value}
             </li>
-          
           ))
     }
 
     const getItemsTotal = (data) => {
-      let itemsList = data.data;
-      const val = Object.values(itemsList);
-      return val.reduce((acc, currentValue) => {
+      const val = Object.values(data);
+      return val.reduce((acc: number, currentValue) => {
         return acc + Number(currentValue) ;
       },0)
    }
