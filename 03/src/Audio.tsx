@@ -5,7 +5,6 @@ type audioProps = {
 }
 
 const Audio = ({ srcfile} : audioProps) => {
-
     return(
         <audio src={srcfile} autoPlay/>
     )
